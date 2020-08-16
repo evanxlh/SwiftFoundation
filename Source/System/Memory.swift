@@ -7,10 +7,28 @@
 
 import Foundation
 
+public enum SystemError: Error {
+    case unknown
+    case underlyingError(Error)
+    case errorMessage(String)
+}
+
+public struct SpaceUsage: CustomDebugStringConvertible {
+    public var free: UInt64
+    public var total: UInt64
+    
+    public var debugDescription: String {
+        var desc = "Memory SpaceUsage: [\n"
+        desc.append("Free Bytes: \(ByteCountFormatter.string(fromByteCount: Int64(free), countStyle: .memory)),\n")
+        desc.append("Total Bytes: \(ByteCountFormatter.string(fromByteCount: Int64(total), countStyle: .memory))\n]")
+        return desc
+    }
+}
+
 /// Fetch current memory state.
 public struct Memory {
     
-    public struct State: CustomDebugStringConvertible {
+    public struct DetailInfo: CustomDebugStringConvertible {
         public var freeBytes: UInt64
         public var activeBytes: UInt64
         public var inactiveBytes: UInt64
@@ -30,25 +48,13 @@ public struct Memory {
         }
     }
     
-    public struct Usage: CustomDebugStringConvertible {
-        public var usedBytes: UInt64
-        public var totalBytes: UInt64
-        
-        public var debugDescription: String {
-            var desc = "Memory Usage: [\n"
-            desc.append("Used Bytes: \(ByteCountFormatter.string(fromByteCount: Int64(usedBytes), countStyle: .memory)),\n")
-            desc.append("Total Bytes: \(ByteCountFormatter.string(fromByteCount: Int64(totalBytes), countStyle: .memory))\n]")
-            return desc
-        }
-    }
-    
     /// Physic memory in bytes for your device.
     public static func physical() -> UInt64 {
         return ProcessInfo.processInfo.physicalMemory
     }
     
     /// Current memory usage for your device.
-    public static func usage() -> Usage? {
+    public static func fetchCurrentUsage() throws -> SpaceUsage {
         
         var taskInfo = mach_task_basic_info()
         var count = mach_msg_type_number_t(MemoryLayout<mach_task_basic_info>.size / MemoryLayout<integer_t>.size)
@@ -61,14 +67,14 @@ public struct Memory {
         guard result == KERN_SUCCESS else {
             let errorString = String(cString: mach_error_string(result), encoding: String.Encoding.ascii) ?? "unknown error"
             print("Collecting used memroy info failed: \(errorString)")
-            return nil
+            throw SystemError.errorMessage(errorString)
         }
-        
-        return Usage(usedBytes: UInt64(taskInfo.resident_size), totalBytes: physical())
+        let freeBytes = physical() - UInt64(taskInfo.resident_size)
+        return SpaceUsage(free: freeBytes, total: physical())
     }
     
     /// Obtain current memory state for your device.
-    public static func state() -> State? {
+    public static func fetchDetailInfo() throws -> DetailInfo {
         
         var count: mach_msg_type_number_t = mach_msg_type_number_t(MemoryLayout<vm_statistics64>.size / MemoryLayout<integer_t>.size)
         let pageSize = natural_t(vm_kernel_page_size)
@@ -83,7 +89,7 @@ public struct Memory {
         guard result == KERN_SUCCESS else {
             let errorString = String(cString: mach_error_string(result), encoding: String.Encoding.ascii) ?? "unknown error"
             print("Collecting memroy detail failed: \(errorString)")
-            return nil
+            throw SystemError.errorMessage(errorString)
         }
         
         let statistics: vm_statistics64 = statisticsPointer.move()
@@ -93,11 +99,11 @@ public struct Memory {
         let wired = UInt64(statistics.wire_count * pageSize)
         let compressed = UInt64(statistics.compressor_page_count * pageSize)
         
-        return State(freeBytes: free,
-                     activeBytes: active,
-                     inactiveBytes: inactive,
-                     wiredBytes: wired,
-                     compressedBytes: compressed,
-                     totalBytes: physical())
+        return DetailInfo(freeBytes: free,
+                          activeBytes: active,
+                          inactiveBytes: inactive,
+                          wiredBytes: wired,
+                          compressedBytes: compressed,
+                          totalBytes: physical())
     }
 }
