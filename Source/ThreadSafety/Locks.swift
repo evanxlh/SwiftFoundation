@@ -15,9 +15,12 @@ public protocol Lockable {
     func unlock()
 }
 
-/// A `NSLock` wrapped lock. For more information, see https://developer.apple.com/documentation/foundation/nslock.
+/// A `NSLock` wrapped lock. For more information, see [NSLock].
 ///
-/// - Warning: Lock and unlock should be called on the same thread.
+/// [NSLock]:
+/// https://developer.apple.com/documentation/foundation/nslock.
+///
+/// - Important: Lock and unlock should be called on the same thread.
 public final class Lock: Lockable {
     
     private let _lock: NSLock
@@ -40,7 +43,7 @@ public final class Lock: Lockable {
 /// [pthread_mutex_lock]:
 /// https://manpages.debian.org/stretch/glibc-doc/pthread_mutex_lock.3.en.html
 ///
-/// - Warning: Lock and unlock should be called on the same thread.
+/// - Important: Lock and unlock should be called on the same thread.
 public final class MutexLock: Lockable {
     
     private var _lock: pthread_mutex_t
@@ -87,7 +90,7 @@ public final class SemaphoreLock: Lockable {
 /// [os_unfair_lock_lock]:
 /// https://developer.apple.com/documentation/os/1646466-os_unfair_lock_lock?language=objc
 ///
-/// - Warning: Lock and unlock should be called on the same thread.
+/// - Important: Lock and unlock should be called on the same thread.
 @available(iOS 10.0, OSX 10.12, *)
 public final class UnfairLock: Lockable {
     
