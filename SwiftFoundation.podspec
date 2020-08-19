@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "SwiftFoundation"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "SwiftFoundation, speed up your development using Swift."
   spec.description  = <<-DESC
   	A swift foundation toolkit for apple multiple platforms, which help you speed up sdk or app development.
