@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		201AAB4324EE62D7008F3AE1 /* Integer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201AAB4024EE62D7008F3AE1 /* Integer+Extension.swift */; };
+		201AAB4424EE62D7008F3AE1 /* Integer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201AAB4024EE62D7008F3AE1 /* Integer+Extension.swift */; };
+		201AAB4524EE62D7008F3AE1 /* Integer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201AAB4024EE62D7008F3AE1 /* Integer+Extension.swift */; };
+		201AAB4624EE62D7008F3AE1 /* Integer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201AAB4024EE62D7008F3AE1 /* Integer+Extension.swift */; };
+		201AAB4724EE62D7008F3AE1 /* Data+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201AAB4124EE62D7008F3AE1 /* Data+TypeConversion.swift */; };
+		201AAB4824EE62D7008F3AE1 /* Data+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201AAB4124EE62D7008F3AE1 /* Data+TypeConversion.swift */; };
+		201AAB4924EE62D7008F3AE1 /* Data+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201AAB4124EE62D7008F3AE1 /* Data+TypeConversion.swift */; };
+		201AAB4A24EE62D7008F3AE1 /* Data+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201AAB4124EE62D7008F3AE1 /* Data+TypeConversion.swift */; };
+		201AAB5124EE6474008F3AE1 /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201AAB5024EE6474008F3AE1 /* DispatchTimer.swift */; };
+		201AAB5224EE6474008F3AE1 /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201AAB5024EE6474008F3AE1 /* DispatchTimer.swift */; };
+		201AAB5324EE6474008F3AE1 /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201AAB5024EE6474008F3AE1 /* DispatchTimer.swift */; };
+		201AAB5424EE6474008F3AE1 /* DispatchTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201AAB5024EE6474008F3AE1 /* DispatchTimer.swift */; };
 		2030369D24E97912005361B3 /* Locks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030369C24E97911005361B3 /* Locks.swift */; };
 		2030369E24E97912005361B3 /* Locks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030369C24E97911005361B3 /* Locks.swift */; };
 		2030369F24E97912005361B3 /* Locks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2030369C24E97911005361B3 /* Locks.swift */; };
@@ -62,6 +74,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		201AAB4024EE62D7008F3AE1 /* Integer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Integer+Extension.swift"; sourceTree = "<group>"; };
+		201AAB4124EE62D7008F3AE1 /* Data+TypeConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+TypeConversion.swift"; sourceTree = "<group>"; };
+		201AAB5024EE6474008F3AE1 /* DispatchTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchTimer.swift; sourceTree = "<group>"; };
 		2030365C24E976D4005361B3 /* SwiftFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2030366A24E97722005361B3 /* SwiftFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2030367724E9773D005361B3 /* SwiftFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +139,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		201AAB4F24EE6440008F3AE1 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				2030369C24E97911005361B3 /* Locks.swift */,
+				201AAB5024EE6474008F3AE1 /* DispatchTimer.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 		2030365D24E976D4005361B3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,10 +172,10 @@
 		2030369924E97843005361B3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				201AAB4F24EE6440008F3AE1 /* Foundation */,
 				2050C77C24ED6A59002C81AD /* Algorithm */,
 				203036B624E97D30005361B3 /* Debug */,
 				203036C324E98804005361B3 /* FileManagement */,
-				203036B724E97D46005361B3 /* ThreadSafety */,
 				203036B824E97DC2005361B3 /* System */,
 				203036AB24E97A70005361B3 /* Extensions */,
 			);
@@ -170,6 +194,9 @@
 			isa = PBXGroup;
 			children = (
 				203036BE24E986D9005361B3 /* String+Extension.swift */,
+				201AAB4124EE62D7008F3AE1 /* Data+TypeConversion.swift */,
+				201AAB4024EE62D7008F3AE1 /* Integer+Extension.swift */,
+				203036AC24E97A82005361B3 /* DispatchQueue+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -181,15 +208,6 @@
 				203036A624E97A33005361B3 /* TimeProfiler.swift */,
 			);
 			path = Debug;
-			sourceTree = "<group>";
-		};
-		203036B724E97D46005361B3 /* ThreadSafety */ = {
-			isa = PBXGroup;
-			children = (
-				2030369C24E97911005361B3 /* Locks.swift */,
-				203036AC24E97A82005361B3 /* DispatchQueue+Extension.swift */,
-			);
-			path = ThreadSafety;
 			sourceTree = "<group>";
 		};
 		203036B824E97DC2005361B3 /* System */ = {
@@ -459,6 +477,7 @@
 			files = (
 				203036CA24E9887B005361B3 /* FileCacheManager.swift in Sources */,
 				203036BA24E97EC7005361B3 /* Memory.swift in Sources */,
+				201AAB5124EE6474008F3AE1 /* DispatchTimer.swift in Sources */,
 				203036AD24E97A82005361B3 /* DispatchQueue+Extension.swift in Sources */,
 				2030369D24E97912005361B3 /* Locks.swift in Sources */,
 				203036A224E9799B005361B3 /* ConsoleLogger.swift in Sources */,
@@ -466,7 +485,9 @@
 				2050C77E24ED6AF4002C81AD /* Stack.swift in Sources */,
 				203036CF24E98CF9005361B3 /* Disk.swift in Sources */,
 				203036BF24E986D9005361B3 /* String+Extension.swift in Sources */,
+				201AAB4724EE62D7008F3AE1 /* Data+TypeConversion.swift in Sources */,
 				203036A724E97A33005361B3 /* TimeProfiler.swift in Sources */,
+				201AAB4324EE62D7008F3AE1 /* Integer+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +497,7 @@
 			files = (
 				203036CB24E9887B005361B3 /* FileCacheManager.swift in Sources */,
 				203036BB24E97EC7005361B3 /* Memory.swift in Sources */,
+				201AAB5224EE6474008F3AE1 /* DispatchTimer.swift in Sources */,
 				203036AE24E97A82005361B3 /* DispatchQueue+Extension.swift in Sources */,
 				2030369E24E97912005361B3 /* Locks.swift in Sources */,
 				203036A324E9799B005361B3 /* ConsoleLogger.swift in Sources */,
@@ -483,7 +505,9 @@
 				2050C77F24ED6AF4002C81AD /* Stack.swift in Sources */,
 				203036D024E98CF9005361B3 /* Disk.swift in Sources */,
 				203036C024E986D9005361B3 /* String+Extension.swift in Sources */,
+				201AAB4824EE62D7008F3AE1 /* Data+TypeConversion.swift in Sources */,
 				203036A824E97A33005361B3 /* TimeProfiler.swift in Sources */,
+				201AAB4424EE62D7008F3AE1 /* Integer+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +517,7 @@
 			files = (
 				203036CC24E9887B005361B3 /* FileCacheManager.swift in Sources */,
 				203036BC24E97EC7005361B3 /* Memory.swift in Sources */,
+				201AAB5324EE6474008F3AE1 /* DispatchTimer.swift in Sources */,
 				203036AF24E97A82005361B3 /* DispatchQueue+Extension.swift in Sources */,
 				2030369F24E97912005361B3 /* Locks.swift in Sources */,
 				203036A424E9799B005361B3 /* ConsoleLogger.swift in Sources */,
@@ -500,7 +525,9 @@
 				2050C78024ED6AF4002C81AD /* Stack.swift in Sources */,
 				203036D124E98CF9005361B3 /* Disk.swift in Sources */,
 				203036C124E986D9005361B3 /* String+Extension.swift in Sources */,
+				201AAB4924EE62D7008F3AE1 /* Data+TypeConversion.swift in Sources */,
 				203036A924E97A33005361B3 /* TimeProfiler.swift in Sources */,
+				201AAB4524EE62D7008F3AE1 /* Integer+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +537,7 @@
 			files = (
 				203036CD24E9887B005361B3 /* FileCacheManager.swift in Sources */,
 				203036BD24E97EC7005361B3 /* Memory.swift in Sources */,
+				201AAB5424EE6474008F3AE1 /* DispatchTimer.swift in Sources */,
 				203036B024E97A82005361B3 /* DispatchQueue+Extension.swift in Sources */,
 				203036A024E97912005361B3 /* Locks.swift in Sources */,
 				203036A524E9799B005361B3 /* ConsoleLogger.swift in Sources */,
@@ -517,7 +545,9 @@
 				2050C78124ED6AF4002C81AD /* Stack.swift in Sources */,
 				203036D224E98CF9005361B3 /* Disk.swift in Sources */,
 				203036C224E986D9005361B3 /* String+Extension.swift in Sources */,
+				201AAB4A24EE62D7008F3AE1 /* Data+TypeConversion.swift in Sources */,
 				203036AA24E97A33005361B3 /* TimeProfiler.swift in Sources */,
+				201AAB4624EE62D7008F3AE1 /* Integer+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1233,12 +1263,13 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1249,6 +1280,8 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Debug;
 		};
@@ -1300,12 +1333,13 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = me.evanxlh.Tests;
@@ -1315,7 +1349,9 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Release;
 		};
