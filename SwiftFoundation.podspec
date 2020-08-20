@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
 
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author             = { "Evan Xie" => "evanxie.mr@foxmail.com" }
-  spec.social_media_url   = "https://evanxlh.gitee.io/Blog/"
+  spec.social_media_url   = "https://evanxlh.github.io"
 
   spec.swift_versions = "5.0"
   spec.ios.deployment_target = "10.0"
