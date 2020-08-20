@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "SwiftFoundation"
-  spec.version      = "0.0.3"
+  spec.version      = "0.0.4"
   spec.summary      = "SwiftFoundation, speed up your development using Swift."
   spec.homepage     = "https://github.com/evanxlh/SwiftFoundation"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"

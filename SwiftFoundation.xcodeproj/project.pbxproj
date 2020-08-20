@@ -51,10 +51,6 @@
 		203036CB24E9887B005361B3 /* FileCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203036C924E9887B005361B3 /* FileCacheManager.swift */; };
 		203036CC24E9887B005361B3 /* FileCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203036C924E9887B005361B3 /* FileCacheManager.swift */; };
 		203036CD24E9887B005361B3 /* FileCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203036C924E9887B005361B3 /* FileCacheManager.swift */; };
-		203036CF24E98CF9005361B3 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203036CE24E98CF9005361B3 /* Disk.swift */; };
-		203036D024E98CF9005361B3 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203036CE24E98CF9005361B3 /* Disk.swift */; };
-		203036D124E98CF9005361B3 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203036CE24E98CF9005361B3 /* Disk.swift */; };
-		203036D224E98CF9005361B3 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203036CE24E98CF9005361B3 /* Disk.swift */; };
 		2050C77E24ED6AF4002C81AD /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2050C77D24ED6AF4002C81AD /* Stack.swift */; };
 		2050C77F24ED6AF4002C81AD /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2050C77D24ED6AF4002C81AD /* Stack.swift */; };
 		2050C78024ED6AF4002C81AD /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2050C77D24ED6AF4002C81AD /* Stack.swift */; };
@@ -92,7 +88,6 @@
 		203036BE24E986D9005361B3 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		203036C424E98874005361B3 /* FileManager+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+Foundation.swift"; sourceTree = "<group>"; };
 		203036C924E9887B005361B3 /* FileCacheManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileCacheManager.swift; sourceTree = "<group>"; };
-		203036CE24E98CF9005361B3 /* Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
 		2050C77D24ED6AF4002C81AD /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		2050C78B24ED73C8002C81AD /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2050C78D24ED73C8002C81AD /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
@@ -142,8 +137,8 @@
 		201AAB4F24EE6440008F3AE1 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				2030369C24E97911005361B3 /* Locks.swift */,
 				201AAB5024EE6474008F3AE1 /* DispatchTimer.swift */,
+				2030369C24E97911005361B3 /* Locks.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -172,12 +167,12 @@
 		2030369924E97843005361B3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				201AAB4F24EE6440008F3AE1 /* Foundation */,
 				2050C77C24ED6A59002C81AD /* Algorithm */,
 				203036B624E97D30005361B3 /* Debug */,
-				203036C324E98804005361B3 /* FileManagement */,
-				203036B824E97DC2005361B3 /* System */,
 				203036AB24E97A70005361B3 /* Extensions */,
+				203036C324E98804005361B3 /* FileManagement */,
+				201AAB4F24EE6440008F3AE1 /* Foundation */,
+				203036B824E97DC2005361B3 /* System */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -193,10 +188,10 @@
 		203036AB24E97A70005361B3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				203036BE24E986D9005361B3 /* String+Extension.swift */,
 				201AAB4124EE62D7008F3AE1 /* Data+TypeConversion.swift */,
-				201AAB4024EE62D7008F3AE1 /* Integer+Extension.swift */,
 				203036AC24E97A82005361B3 /* DispatchQueue+Extension.swift */,
+				201AAB4024EE62D7008F3AE1 /* Integer+Extension.swift */,
+				203036BE24E986D9005361B3 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -214,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				203036B924E97EC7005361B3 /* Memory.swift */,
-				203036CE24E98CF9005361B3 /* Disk.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -483,7 +477,6 @@
 				203036A224E9799B005361B3 /* ConsoleLogger.swift in Sources */,
 				203036C524E98874005361B3 /* FileManager+Foundation.swift in Sources */,
 				2050C77E24ED6AF4002C81AD /* Stack.swift in Sources */,
-				203036CF24E98CF9005361B3 /* Disk.swift in Sources */,
 				203036BF24E986D9005361B3 /* String+Extension.swift in Sources */,
 				201AAB4724EE62D7008F3AE1 /* Data+TypeConversion.swift in Sources */,
 				203036A724E97A33005361B3 /* TimeProfiler.swift in Sources */,
@@ -503,7 +496,6 @@
 				203036A324E9799B005361B3 /* ConsoleLogger.swift in Sources */,
 				203036C624E98874005361B3 /* FileManager+Foundation.swift in Sources */,
 				2050C77F24ED6AF4002C81AD /* Stack.swift in Sources */,
-				203036D024E98CF9005361B3 /* Disk.swift in Sources */,
 				203036C024E986D9005361B3 /* String+Extension.swift in Sources */,
 				201AAB4824EE62D7008F3AE1 /* Data+TypeConversion.swift in Sources */,
 				203036A824E97A33005361B3 /* TimeProfiler.swift in Sources */,
@@ -523,7 +515,6 @@
 				203036A424E9799B005361B3 /* ConsoleLogger.swift in Sources */,
 				203036C724E98874005361B3 /* FileManager+Foundation.swift in Sources */,
 				2050C78024ED6AF4002C81AD /* Stack.swift in Sources */,
-				203036D124E98CF9005361B3 /* Disk.swift in Sources */,
 				203036C124E986D9005361B3 /* String+Extension.swift in Sources */,
 				201AAB4924EE62D7008F3AE1 /* Data+TypeConversion.swift in Sources */,
 				203036A924E97A33005361B3 /* TimeProfiler.swift in Sources */,
@@ -543,7 +534,6 @@
 				203036A524E9799B005361B3 /* ConsoleLogger.swift in Sources */,
 				203036C824E98874005361B3 /* FileManager+Foundation.swift in Sources */,
 				2050C78124ED6AF4002C81AD /* Stack.swift in Sources */,
-				203036D224E98CF9005361B3 /* Disk.swift in Sources */,
 				203036C224E986D9005361B3 /* String+Extension.swift in Sources */,
 				201AAB4A24EE62D7008F3AE1 /* Data+TypeConversion.swift in Sources */,
 				203036AA24E97A33005361B3 /* TimeProfiler.swift in Sources */,

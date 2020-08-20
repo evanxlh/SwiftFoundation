@@ -57,7 +57,7 @@ public extension FileManager {
             guard let values = try? url.resourceValues(forKeys: Set<URLResourceKey>(arrayLiteral: key)),
                 let isDirectory = values.isDirectory,
                 urlFilter(url, isDirectory) else {
-                continue
+                    continue
             }
             fileURLs.append(url)
         }
@@ -96,34 +96,18 @@ public extension FileManager {
 
 public extension FileManager {
     
-    struct DiskSpaceUsage: CustomDebugStringConvertible {
-        public var freeSpace: UInt64
-        public var totalSpace: UInt64
-        
-        public var debugDescription: String {
-            var desc = "Disk Space: [\n"
-            desc.append("Free: \(ByteCountFormatter.string(fromByteCount: Int64(freeSpace), countStyle: .file)),\n")
-            desc.append("Total: \(ByteCountFormatter.string(fromByteCount: Int64(totalSpace), countStyle: .memory))\n]")
-            return desc
-        }
-    }
-    
-    /**
-     Get the file size for given file url.
-     
-     If given file url is directory, the file size is 0.
-     */
+    /// Get the file size for given file url.
+    ///
+    /// - Important: If given file url is directory, the file size is 0.
     static func fileSizeAtURL(_ fileURL: URL) -> UInt64 {
         guard let attrs = try? FileManager.default.attributesOfItem(atPath: fileURL.path) else { return 0 }
         guard let fileSize = attrs[FileAttributeKey.size] as? UInt64 else { return 0 }
         return fileSize
     }
     
-    /**
-     Calculate the directory size, which includes all the files under the given directory url.
-     
-     If given directory url is a regular file, return 0.
-     */
+    /// Calculate the directory size, including all the files under the given directory url.
+    ///
+    /// - Important: If given directory url is a regular file, return 0.
     static func directorySizeAtURL(_ directoryURL: URL) -> UInt64 {
         guard let enumerator = FileManager.default.enumerator(at: directoryURL, includingPropertiesForKeys: nil) else {
             return 0
@@ -140,13 +124,11 @@ public extension FileManager {
         return totalSize
     }
     
-    /**
-     Get the local disk free space and total space in bytes.
-     */
-    static func getDiskSpaceUsage() -> DiskSpaceUsage {
-        let attrs = try! FileManager.default.attributesOfFileSystem(forPath: documentsDirectoryURL.path)
-        let totalSapce = attrs[FileAttributeKey.systemSize] as! UInt64
-        let freeSpace = attrs[FileAttributeKey.systemFreeSize] as! UInt64
-        return DiskSpaceUsage(freeSpace: freeSpace, totalSpace: totalSapce)
+    /// Get current disk space usage.
+    static func diskSpaceUsage() throws -> SpaceUsage {
+        let attrs = try FileManager.default.attributesOfFileSystem(forPath: "/")
+        let free = attrs[FileAttributeKey.systemFreeSize] as! UInt64
+        let total = attrs[FileAttributeKey.systemSize] as! UInt64
+        return SpaceUsage(free: free, total: total)
     }
 }
